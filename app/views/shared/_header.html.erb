@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="header-contents">
+    <div class="header-left">
+      <%= link_to root_path do %>
+        <div class="logo-title">
+          Task Manager
+        </div>
+        <div class="logo-sub-title">
+          for Teacher
+        </div>
+      <% end %>
+    </div>
+    <ul class='header-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.name, "#", class: "user-name" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout header-btns" %></li>
+        <li>
+          <%#= link_to new_article_path do %>
+            <div class="post-articles header-btns">
+              タスク生成
+            </div>
+          <%# end %>
+        </li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login header-btns" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up header-btns" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
