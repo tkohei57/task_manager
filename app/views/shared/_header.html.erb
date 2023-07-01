@@ -15,11 +15,11 @@
         <li><%= link_to current_user.name, "#", class: "user-name" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout header-btns" %></li>
         <li>
-          <%#= link_to new_article_path do %>
-            <div class="post-articles header-btns">
+          <%= link_to new_task_path do %>
+            <div class="post-tasks header-btns">
               タスク生成
             </div>
-          <%# end %>
+          <% end %>
         </li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login header-btns" %></li>
