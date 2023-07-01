@@ -1,0 +1,27 @@
+<%= render "shared/second_header" %>
+
+<div class="new-tasks">
+  <div class="task-form">
+    <%= form_with model: @task, local: true do |f| %>
+      <div class="task-title">
+        <%= f.text_field :title, class: "title-form", placeholder: "タイトル" %>
+      </div>
+
+      <div class="task-body">
+        <%= f.text_area :body, class: "body-form", placeholder: "タスクの詳細" %>
+      </div>
+
+      <div class="task-address">
+        <%= f.text_field :address, class: "address-form", placeholder: "宛先" %>
+      </div>
+
+      <div class="task-genre">
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {id:"task-genre", class: "genre-form"}) %>
+      </div>
+
+      <div class="task-submit">
+        <%= f.submit "タスクを作成する", class: "task-submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
