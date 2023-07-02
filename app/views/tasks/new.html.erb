@@ -3,19 +3,19 @@
 <div class="new-tasks">
   <div class="task-form">
     <%= form_with model: @task, local: true do |f| %>
-      <div class="task-title">
+      <div class="task-title-form">
         <%= f.text_field :title, class: "title-form", placeholder: "タイトル" %>
       </div>
 
-      <div class="task-body">
+      <div class="task-body-form">
         <%= f.text_area :body, class: "body-form", placeholder: "タスクの詳細" %>
       </div>
 
-      <div class="task-address">
+      <div class="task-address-form">
         <%= f.text_field :address, class: "address-form", placeholder: "宛先" %>
       </div>
 
-      <div class="task-genre">
+      <div class="task-genre-form">
         <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {id:"task-genre", class: "genre-form"}) %>
       </div>
 
