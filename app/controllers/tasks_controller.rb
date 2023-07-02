@@ -1,5 +1,8 @@
 class TasksController < ApplicationController
   def index
+    @tasks = Task.includes(:user)
+    @uncompleted_tasks = @tasks.where(completed: 0)
+    @completed_tasks = @tasks.where(completed: 1)
   end
 
   def new

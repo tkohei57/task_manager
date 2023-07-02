@@ -1,0 +1,16 @@
+<div class="tasks">
+  <div class="title-date">
+    <div class="task-title">
+      タイトル : <%= task.title %>
+    </div>
+    <div class="task-date">
+      投稿日時 : <%= task.created_at %>
+    </div>
+  </div>
+  <div class="task-address">
+    from : <%= task.user.name %><span> ＞＞ </span>to : <%= task.address %>
+  </div>
+  <div class="task-genre">
+    タスクの種類 : <%= task.genre.name %>
+  </div>
+</div>
