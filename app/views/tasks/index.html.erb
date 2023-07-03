@@ -1,28 +1,30 @@
 <%= render "shared/header" %>
 
-<div class="index-main bg_pattern Polka_v2">
-  <div class="uncompleted-tasks">
-    <div class="uncompleted-header">
-      未完了のタスク
-    </div>
-    <% if @uncompleted_tasks.present? %>
-      <%= render partial: "shared/task", collection: @uncompleted_tasks %>
-    <% else %>
-      <div class="no-task-message">
-        未完了のタスクがありません
+<div class="bg_pattern Polka_v2">
+  <div class="index-main">
+    <div class="uncompleted-tasks">
+      <div class="uncompleted-header">
+        未完了のタスク
       </div>
-    <% end %>
-  </div>
-  <div class="completed-tasks">
-    <div class="completed-header">
-      完了済みのタスク
+      <% if @uncompleted_tasks.present? %>
+        <%= render partial: "shared/task", collection: @uncompleted_tasks %>
+      <% else %>
+        <div class="no-task-message">
+          未完了のタスクがありません
+        </div>
+      <% end %>
     </div>
-    <% if @completed_tasks.present? %>
-      <%= render partial: "shared/task", collection: @completed_tasks %>
-    <% else %>
-      <div class="no-task-message">
-        完了済みのタスクがありません
+    <div class="completed-tasks">
+      <div class="completed-header">
+        完了済みのタスク
       </div>
-    <% end %>
+      <% if @completed_tasks.present? %>
+        <%= render partial: "shared/task", collection: @completed_tasks %>
+      <% else %>
+        <div class="no-task-message">
+          完了済みのタスクがありません
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
