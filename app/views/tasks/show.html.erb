@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+
+<div class="bg_pattern Polka_v2">
+  <div class="show-task">
+    <div class="task-detail">
+      <div class="show-title-date">
+        <div class="show-task-title">
+          タスク名 : <%= @task.title %>
+        </div>
+        <div class="show-task-date">
+          投稿日時 : <%= @task.created_at %>
+        </div>
+      </div>
+      <div class="show-task-address">
+        from : <%= @task.user.name %><span> ＞＞ </span>to : <%= @task.address %>
+      </div>
+      <div class="show-task-genre">
+        タスクの種類 : <%= @task.genre.name %>
+      </div>
+      <div class="show-task-body">
+        <div class="body-head">
+          タスクの詳細
+        </div>
+        <div class="body-content">
+          <%= @task.body %>
+        </div>
+      </div>
+    </div>
+</div>

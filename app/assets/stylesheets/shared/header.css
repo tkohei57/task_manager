@@ -43,6 +43,41 @@
   align-items: center;
 }
 
+.header-right a {
+  text-decoration: none;
+  color: black;
+}
+
+.user-name {
+  border: 1px solid black;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.login {
+  border: 1px solid black;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.logout {
+  border: 1px solid black;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.sign-up {
+  border: 1px solid black;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.post-tasks {
+  border: 1px solid black;
+  margin-right: 10px;
+  padding: 10px;
+}
+
 /* second-header */
 .second-header {
   width: 100vw;
