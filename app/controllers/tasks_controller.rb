@@ -22,6 +22,13 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  def complete
+    binding.pry
+    @task = Task.find(params[:id])
+    @task.update(completed: 1)
+    redirect_to root_path
+  end
+
   private
   def task_params
     params.require(:task).permit(:title, :body, :address, :genre_id).merge(user_id: current_user.id)
