@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'tasks#index'
   resources :tasks do
     member do
-      get 'complete'
+      patch 'complete'
     end
   end
   resources :tasks, only: [:new, :create, :show]

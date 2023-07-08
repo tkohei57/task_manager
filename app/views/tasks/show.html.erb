@@ -27,7 +27,11 @@
       </div>
     </div>
     <div class="complete">
-      <%= link_to 'タスク完了', complete_task_path, class: "complete-btn" %>
+      <% if @task.completed == false %>
+        <%= link_to 'タスク完了', complete_task_path, method: :patch, class: "complete-btn" %>
+      <% else %>
+        <%= link_to '未完了に戻す', complete_task_path, method: :patch, class: "complete-btn" %>
+      <% end %>
     </div>
   </div>
 </div>
