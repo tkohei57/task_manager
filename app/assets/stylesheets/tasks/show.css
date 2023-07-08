@@ -45,3 +45,21 @@
 .body-content {
   font-size: 20px;
 }
+
+/* タスク完了・未完了ボタン */
+.complete {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  line-height: 50px;
+  background-color: black;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.complete-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}

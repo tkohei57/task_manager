@@ -23,9 +23,12 @@ class TasksController < ApplicationController
   end
 
   def complete
-    binding.pry
     @task = Task.find(params[:id])
-    @task.update(completed: 1)
+    if @task.completed == false
+      @task.update(completed: 1)
+    else
+      @task.update(completed: 0)
+    end
     redirect_to root_path
   end
 
