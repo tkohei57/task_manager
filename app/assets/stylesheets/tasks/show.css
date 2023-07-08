@@ -46,18 +46,33 @@
   font-size: 20px;
 }
 
-/* タスク完了・未完了ボタン */
-.complete {
-  border: none;
-  border-radius: 10px;
-  width: 100%;
+/* タスク完了・未完了・削除ボタン */
+.completed {
   line-height: 50px;
   background-color: black;
+  border: none;
+  border-radius: 10px;
   text-align: center;
-  margin-top: 30px;
+  margin: 20px 0;
 }
 
 .complete-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.task-delete {
+  line-height: 50px;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.delete-btn {
   text-decoration: none;
   color: white;
   font-size: 18px;
