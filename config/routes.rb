@@ -6,5 +6,5 @@ Rails.application.routes.draw do
       patch 'complete'
     end
   end
-  resources :tasks, only: [:new, :create, :show]
+  resources :tasks, only: [:new, :create, :show, :edit, :update, :destroy]
 end
