@@ -5,7 +5,9 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.text :body, null: false
       t.string :address, null: false
       t.integer :genre_id, null: false
+      t.date :deadline, null: false
       t.boolean :completed, null: false, default: false
+      t.boolean :confirmation, null: false, default: false
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end

@@ -3,11 +3,14 @@
     <div class="tasks">
       <div class="title-date">
         <div class="task-title">
-          タイトル : <%= task.title %>
+          <%= task.title %>
         </div>
         <div class="task-date">
-          投稿日時 : <%= task.created_at %>
+          <%= task.created_at %>
         </div>
+      </div>
+      <div class="task-deadline">
+        期日 : <%= task.deadline %>
       </div>
       <div class="task-address">
         from : <%= task.user.name %><span> ＞＞ </span>to : <%= task.address %>

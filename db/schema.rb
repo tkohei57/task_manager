@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 2023_07_01_080447) do
     t.text "body", null: false
     t.string "address", null: false
     t.integer "genre_id", null: false
+    t.date "deadline", null: false
     t.boolean "completed", default: false, null: false
+    t.boolean "confirmation", default: false, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

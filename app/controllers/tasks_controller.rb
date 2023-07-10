@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.includes(:user)
-    @uncompleted_tasks = @tasks.where(completed: 0)
+    @uncompleted_tasks = @tasks.where(completed: 0, confirmation: 0)
     @completed_tasks = @tasks.where(completed: 1)
+    @run_tasks = @tasks.where(completed: 0, confirmation: 1)
   end
 
   def new
@@ -28,6 +29,12 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
+  def confirmation
+    @task = Task.find(params[:id])
+    @task.update(confirmation: 1)
+    redirect_to root_path
+  end
+
   def complete
     @task = Task.find(params[:id])
     if @task.completed == false
@@ -40,6 +47,6 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :body, :address, :genre_id).merge(user_id: current_user.id)
+    params.require(:task).permit(:title, :body, :address, :genre_id, :deadline).merge(user_id: current_user.id)
   end
 end

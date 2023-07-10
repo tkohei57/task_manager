@@ -4,7 +4,7 @@
   <div class="index-main">
     <div class="uncompleted-tasks">
       <div class="uncompleted-header">
-        未完了のタスク
+        新たに投稿されたタスク
       </div>
       <% if @uncompleted_tasks.present? %>
         <%= render partial: "shared/task", collection: @uncompleted_tasks %>
@@ -14,15 +14,27 @@
         </div>
       <% end %>
     </div>
+    <div class="run-tasks">
+      <div class="run-header">
+        実施中のタスク
+      </div>
+      <% if @run_tasks.present? %>
+        <%= render partial: "shared/task", collection: @run_tasks %>
+      <% else %>
+        <div class="no-task-message">
+          実施中のタスクがありません
+        </div>
+      <% end %>
+    </div>
     <div class="completed-tasks">
       <div class="completed-header">
-        完了済みのタスク
+        タスク確認依頼(タスク完了が確認できたら削除してください)
       </div>
       <% if @completed_tasks.present? %>
         <%= render partial: "shared/task", collection: @completed_tasks %>
       <% else %>
         <div class="no-task-message">
-          完了済みのタスクがありません
+          タスク確認依頼がありません
         </div>
       <% end %>
     </div>
