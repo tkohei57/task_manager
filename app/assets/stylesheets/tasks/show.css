@@ -47,6 +47,22 @@
 }
 
 /* タスク完了・未完了・削除ボタン */
+.confirmation {
+  line-height: 50px;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.confirm-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .completed {
   line-height: 50px;
   background-color: black;

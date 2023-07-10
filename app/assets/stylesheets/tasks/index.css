@@ -1,6 +1,10 @@
 .index-main {
   width: 100%;
   height: calc(100vh - 150px);
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 }
 
 .task-box a {
@@ -9,7 +13,7 @@
 }
 
 .uncompleted-tasks {
-  padding: 40px 150px;
+  width: 30%;
 }
 
 .uncompleted-header {
@@ -19,6 +23,7 @@
 }
 
 .tasks {
+  width: 100%;
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
@@ -38,7 +43,13 @@
 }
 
 .task-date {
-  font-size: 14px;
+  font-size: 8px;
+}
+
+.task-deadline {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .task-address {
@@ -53,8 +64,18 @@
   font-weight: 600;
 }
 
+.run-tasks {
+  width: 30%;
+}
+
+.run-header {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
 .completed-tasks {
-  padding: 40px 150px;
+  width: 30%;
 }
 
 .completed-header {
