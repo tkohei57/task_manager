@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :user
+  has_many :comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
 

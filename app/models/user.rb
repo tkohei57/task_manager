@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :tasks
+  has_many :comments
 
   validates :name, presence: true
   validates :department, presence: true
