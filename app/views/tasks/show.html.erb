@@ -47,4 +47,31 @@
       <% end %>
     </div>
   </div>
+  <div class="show-comments">
+    <% @comments.each do |comment| %>
+      <div class="comment-box">
+        <div class="comment-user-date">
+          <div class="comment-user">
+            <%= comment.user.name %>
+          </div>
+          <div class="comment-date">
+            <%= comment.created_at %>
+          </div>
+        </div>
+        <div class="comment-text">
+          <%= comment.text %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="comment-area">
+    <%= form_with(model: [@task, @comment], local: true) do |f| %>
+      <div class="comment-form">
+        <%= f.text_area :text, placeholder: "コメントを入力", class: "comment-input"%>
+      </div>
+      <div class="show-comment-btn">
+        <%= f.submit "コメントする", class: "comment-submit-btn"%>
+      </div>
+    <% end %>
+  </div>
 </div>
