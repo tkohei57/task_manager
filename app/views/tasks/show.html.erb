@@ -2,6 +2,9 @@
 
 <div class="bg_pattern Polka_v2">
   <div class="show-task">
+    <div class="show-task-header">
+      タスク詳細
+    </div>
     <div class="task-detail">
       <div class="show-title-date">
         <div class="show-task-title">
@@ -48,11 +51,14 @@
     </div>
   </div>
   <div class="show-comments">
+    <div class="show-comment-header">
+      コメント
+    </div>
     <% @comments.each do |comment| %>
       <div class="comment-box">
         <div class="comment-user-date">
           <div class="comment-user">
-            <%= comment.user.name %>
+            <%= comment.user.name %>さん
           </div>
           <div class="comment-date">
             <%= comment.created_at %>
@@ -65,6 +71,9 @@
     <% end %>
   </div>
   <div class="comment-area">
+    <div class="comment-header">
+      コメントする
+    </div>
     <%= form_with(model: [@task, @comment], local: true) do |f| %>
       <div class="comment-form">
         <%= f.text_area :text, placeholder: "コメントを入力", class: "comment-input"%>

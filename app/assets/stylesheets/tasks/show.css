@@ -3,6 +3,12 @@
   padding: 40px 200px;
 }
 
+.show-task-header {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
 .task-detail {
   width: 100%;
   padding: 20px 20px;
@@ -93,4 +99,52 @@
   color: white;
   font-size: 18px;
   font-weight: 600;
+}
+
+.show-comments {
+  width: 100%;
+  padding: 0 200px;
+}
+
+.show-comment-header {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.comment-box {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-user-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-area {
+  width: 100%;
+  padding: 20px 200px;
+}
+
+.comment-header {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.comment-form {
+  margin-bottom: 20px;
+}
+
+.comment-input {
+  width: 100%;
+}
+
+.comment-submit-btn {
+  width: 100%;
 }
