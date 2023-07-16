@@ -1,42 +1,63 @@
 <%= render "shared/header" %>
 
 <div class="bg_pattern Polka_v2">
-  <div class="index-main">
-    <div class="uncompleted-tasks">
-      <div class="uncompleted-header">
-        新たに投稿されたタスク
-      </div>
-      <% if @uncompleted_tasks.present? %>
-        <%= render partial: "shared/task", collection: @uncompleted_tasks %>
-      <% else %>
-        <div class="no-task-message">
-          タスクがありません
+  <% if user_signed_in? %>
+    <div class="index-main">
+      <div class="uncompleted-tasks">
+        <div class="uncompleted-header">
+          新たに投稿されたタスク
         </div>
-      <% end %>
-    </div>
-    <div class="run-tasks">
-      <div class="run-header">
-        実施中のタスク
+        <% if @uncompleted_tasks.present? %>
+          <%= render partial: "shared/task", collection: @uncompleted_tasks %>
+        <% else %>
+          <div class="no-task-message">
+            タスクがありません
+          </div>
+        <% end %>
       </div>
-      <% if @run_tasks.present? %>
-        <%= render partial: "shared/task", collection: @run_tasks %>
-      <% else %>
-        <div class="no-task-message">
-          実施中のタスクがありません
+      <div class="run-tasks">
+        <div class="run-header">
+          実施中のタスク
         </div>
-      <% end %>
-    </div>
-    <div class="completed-tasks">
-      <div class="completed-header">
-        タスク確認依頼(タスク完了が確認できたら削除してください)
+        <% if @run_tasks.present? %>
+          <%= render partial: "shared/task", collection: @run_tasks %>
+        <% else %>
+          <div class="no-task-message">
+            実施中のタスクがありません
+          </div>
+        <% end %>
       </div>
-      <% if @completed_tasks.present? %>
-        <%= render partial: "shared/task", collection: @completed_tasks %>
-      <% else %>
-        <div class="no-task-message">
-          タスク確認依頼がありません
+      <div class="completed-tasks">
+        <div class="completed-header">
+          タスク確認依頼(タスク完了が確認できたら削除してください)
         </div>
-      <% end %>
+        <% if @completed_tasks.present? %>
+          <%= render partial: "shared/task", collection: @completed_tasks %>
+        <% else %>
+          <div class="no-task-message">
+            タスク確認依頼がありません
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="no-login-main">
+      <div class="no-login-message">
+        ※※※ アプリを使用するにはログインする必要があります ※※※
+      </div>
+      <div class="how-to-use">
+        <div class="how-to-title">
+          このアプリの使い方
+        </div>
+        <div class="how-to-body">
+          ①タスクのタイトル・詳細・宛先・期日・種類を入力し、タスクを作成する。<br>
+          ②タスクに取り組む人がタスク詳細ページの”タスクの実施”ボタンを押し、タスクの状態を実施中にする。<br>
+          ③タスクが完了し次第、必要に応じてコメントを残して、タスク詳細ページの”タスク完了”ボタンを押すことでタスクの状態を確認待ちにする。<br>
+          ④タスクの作成者がタスクの実施状況を確認し、問題がなければタスク詳細ページの”タスク削除”ボタンを押してタスクを削除する。<br>
+            修正する必要があれば、コメントを残し、タスク詳細ページの”未完了に戻す”ボタンを押して、もう一度タスクの状態を実施中に戻す。<br>
+            タスクの実施者はそれに応じて必要な修正を行う(この後は③以降の手順と同じ)。
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
